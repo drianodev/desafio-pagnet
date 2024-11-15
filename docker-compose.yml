@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # Spring Boot Application
+  spring-app:
+    image: backend-pagnet:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+  
+  # Postgres Database
+  postgres-db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: pagnet
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+
+  # SPA Application
+  spa-app:
+    build:
+      context: ./frontend # Path to your SPA project directory
+      dockerfile: Dockerfile # Specify the Dockerfile to use
+    ports:
+      - "5173:5173" # Map host port to container port
+    depends_on:
+      - spring-app

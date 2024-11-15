@@ -14,7 +14,7 @@ public class CnabController {
         this.cnabService = cnabService;
     }
 
-    @CrossOrigin(origins = { "http://localhost:5173", "https://frontend-pagnet.onrender.com" })
+    @CrossOrigin(origins = { "http://localhost:5173" })
     @PostMapping("upload")
     public String upload(@RequestParam("file") MultipartFile file) throws Exception {
         System.out.println("Received file: " + file.getOriginalFilename());

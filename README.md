@@ -11,7 +11,7 @@ Desafio feito junto a Giuliana Bezerra [aqui](https://www.youtube.com/playlist?l
 - [Vite](https://vitejs.dev)
 - [React](https://pt-br.react.dev)
 - [Tailwind](https://tailwindcss.com)
-- [MySQL](https://www.mysql.com)
+- Postgresql
 
 ## Como Executar
 
